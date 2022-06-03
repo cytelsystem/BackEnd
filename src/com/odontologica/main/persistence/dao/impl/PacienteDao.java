@@ -7,10 +7,7 @@ import com.odontologica.main.persistence.dao.Dao;
 import com.odontologica.main.persistence.dao.util.ConfiguracionJDBC;
 import org.apache.log4j.Logger;
 
-import java.sql.Connection;
-import java.sql.ResultSet;
-import java.sql.SQLException;
-import java.sql.Statement;
+import java.sql.*;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -61,7 +58,54 @@ public class PacienteDao implements Dao<Paciente> {
 
     @Override
     public Paciente consultarPorId(int id) {
-        return null;
+
+
+        // jdbc.cargarElControlador();
+
+
+        PreparedStatement preparedStatement = null;
+
+        Paciente paciente = null;
+
+        try (Connection con = jdbc.conectarConBaseDeDatos(); PreparedStatement stmt=con.prepareStatement("SELECT * FROM pacientes where id=?")) {
+
+
+
+            //preparedStatement = con.prepareStatement("SELECT * FROM pacientes where id=?");
+
+            stmt.setLong(1, id);
+
+            ResultSet resultado = stmt.executeQuery();
+
+            while(resultado.next()){
+                int IdPaciente = resultado.getInt("id");
+                String nombrePaciente = resultado.getString("nombre");
+                String apellidoPaciente = resultado.getString("apellido");
+                String dniPaciente = resultado.getString("dni");
+                String fechaIngresoPaciente = resultado.getString("fecha_ingreso");
+
+
+                System.out.println(IdPaciente + nombrePaciente + apellidoPaciente + dniPaciente + fechaIngresoPaciente);
+
+                paciente = new Paciente();
+                paciente.setId(IdPaciente);
+                paciente.setNombre(nombrePaciente);
+                paciente.setApellido(apellidoPaciente);
+                paciente.setDni(dniPaciente);
+                paciente.setFecha_ingreso(fechaIngresoPaciente);
+
+
+            }
+
+
+
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        }
+
+        return paciente;
+
+
     }
 
     @Override

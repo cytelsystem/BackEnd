@@ -1,7 +1,7 @@
 create table if not exists pacientes (
     id int auto_increment primary key,
-    apellido varchar(255),
     nombre varchar(255),
+    apellido varchar(255),
     dni varchar (255),
     fecha_ingreso varchar(255),
     id_domicilio int);

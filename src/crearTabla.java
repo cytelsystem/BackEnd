@@ -9,11 +9,11 @@ public class crearTabla {
 
             //Crear la conexion a la base de datos
             Class.forName("org.h2.Driver").newInstance(); // instancia del driver
-            Connection con = DriverManager.getConnection ("jdbc:h2:~/Estudiantes", "sa",""); //objeto conexion
+            Connection con = DriverManager.getConnection ("jdbc:h2:~/pacientes", "sa",""); //objeto conexion
             Statement stmt = con.createStatement(); // Crear objetos Statement
 
             //Código para crear una tabla. Elimina la tabla si esta ya existe y la vuelve a crear
-            String createtable = "DROP TABLE IF EXISTS Estudiantes; CREATE TABLE Estudiantes(ID INT PRIMARY KEY, NOMBRE VARCHAR(255), APELLIDO VARCHAR(255))";
+            String createtable = "DROP TABLE IF EXISTS pacientes; CREATE TABLE pacientes(ID INT PRIMARY KEY, NOMBRE VARCHAR(255), APELLIDO VARCHAR(255), DOMICILIO INT)";
             stmt.execute(createtable); //Ejecutar SQL
 
 

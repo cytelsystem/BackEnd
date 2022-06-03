@@ -19,6 +19,10 @@ public class PacienteService {
         domicilioDao = new DomicilioDao();
     }
 
+
+
+
+
     public Collection<Paciente> consultarTodosLosPacientes() {
         List<Paciente> pacientes = pacienteDao.consultarTodos();
 
@@ -30,4 +34,25 @@ public class PacienteService {
         return pacientes;
 
     }
+
+
+    //*******************************************************************************************//
+
+
+    public void setPacienteDao(Dao<Paciente> pacienteDao) {
+        this.pacienteDao = pacienteDao;
+    }
+
+
+
+    public Paciente buscarPaciente(int id) {
+
+        return pacienteDao.consultarPorId(id);
+    }
+
+    //*******************************************************************************************//
+
+
+
+
 }
