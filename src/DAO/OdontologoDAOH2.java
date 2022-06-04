@@ -138,7 +138,7 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
             logger.info("problemas con el stamwent");
             e.printStackTrace();
         } finally {
-            logger.info("Conexion Crear y preparedStatement OK");
+            //logger.info("Conexion Crear y preparedStatement OK");
         }
 
         return odontologos;
