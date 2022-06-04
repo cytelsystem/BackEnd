@@ -26,12 +26,12 @@ public class OdontologoDao<T> implements Dao<Odontologo> {
 
         try (Connection connetion = jdbc.conectarConBaseDeDatos()) {
 
-            preparedStatement = connetion.prepareStatement("INSERT INTO odontologos VALUES(?,?,?,?)");
+            preparedStatement = connetion.prepareStatement("INSERT into odontologos (Nombre, Apellido, NumeroMatricula) VALUES (?,?,?)");
 
-            preparedStatement.setInt(1,odontologo.getId());
-            preparedStatement.setString(2, odontologo.getNombre());
-            preparedStatement.setString(3, odontologo.getApellido());
-            preparedStatement.setString(4, odontologo.getNumeroMatricula());
+
+            preparedStatement.setString(1, odontologo.getNombre());
+            preparedStatement.setString(2, odontologo.getApellido());
+            preparedStatement.setString(3, odontologo.getNumeroMatricula());
 
             preparedStatement.executeUpdate();
 

@@ -36,10 +36,9 @@ public class Main {
 
 //***********************************Crear un nuevo registro Odontologo************************************************//
         Odontologo odontologo = new Odontologo();
-        odontologo.setId(1);
-        odontologo.setNombre("Hector");
-        odontologo.setApellido("moreno");
-        odontologo.setNumeroMatricula("m5086");
+        odontologo.setNombre("ivonne");
+        odontologo.setApellido("perez");
+        odontologo.setNumeroMatricula("m5087");
 
         OdontologoService odontologoService = new OdontologoService();
         odontologoService.setOdontologoDao(new OdontologoDao());

@@ -4,7 +4,7 @@ import com.odontologica.main.persistence.dao.Dao;
 
 public class Odontologo {
 
-    private int id;
+
     private String nombre;
     private String apellido;
     private String numeroMatricula;
@@ -14,21 +14,13 @@ public class Odontologo {
 
     }
 
-    public Odontologo(int id, String nombre, String apellido, String numeroMatricula) {
-        this.setId(id);
+    public Odontologo(String nombre, String apellido, String numeroMatricula) {
         this.setNombre(nombre);
         this.setApellido(apellido);
         this.setNumeroMatricula(numeroMatricula);
     }
 
 
-    public int getId() {
-        return id;
-    }
-
-    public void setId(int id) {
-        this.id = id;
-    }
 
     public String getNombre() {
         return nombre;
