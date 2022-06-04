@@ -13,6 +13,25 @@ import com.odontologica.main.persistence.dao.impl.PacienteDao;
 public class Main {
     public static void main(String[] args) {
 
+//***********************************Crear un nuevo registro Odontologo************************************************//
+//        Odontologo odontologo = new Odontologo();
+//        odontologo.setNombre("ivonne");
+//        odontologo.setApellido("perez");
+//        odontologo.setNumeroMatricula("m5087");
+//
+//        OdontologoService odontologoService = new OdontologoService();
+//        odontologoService.setOdontologoDao(new OdontologoDao());
+//
+//
+//        odontologoService.guardarOdontologo(odontologo);
+
+//***********************************Buscar Todos************************************************//
+//          OdontologoService odontologoService = new OdontologoService();
+//          odontologoService.setOdontologoIDao(new OdontologoDao());
+//          odontologoService.buscarTodos();
+
+//***********************************************************************************************//
+
 
 //***********************************Crear un nuevo registro************************************************//
 //        Estudiante estudiante = new Estudiante();
@@ -33,18 +52,6 @@ public class Main {
 //
 //        estudianteService.guardarEstudiante(estudiante);
 //        estudianteService.guardarEstudiante(estudiante2);
-
-//***********************************Crear un nuevo registro Odontologo************************************************//
-        Odontologo odontologo = new Odontologo();
-        odontologo.setNombre("ivonne");
-        odontologo.setApellido("perez");
-        odontologo.setNumeroMatricula("m5087");
-
-        OdontologoService odontologoService = new OdontologoService();
-        odontologoService.setOdontologoDao(new OdontologoDao());
-
-
-        odontologoService.guardarOdontologo(odontologo);
 
 
 

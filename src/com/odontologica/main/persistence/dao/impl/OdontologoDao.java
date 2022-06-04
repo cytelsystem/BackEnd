@@ -6,11 +6,13 @@ import com.odontologica.main.persistence.dao.util.ConfiguracionJDBC;
 import org.apache.log4j.Logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
+import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.util.ArrayList;
 import java.util.List;
 
 public class OdontologoDao<T> implements Dao<Odontologo> {
-    //****************************************************************************//
+    //******************************Crear**************************************//
 
     private Logger logger = Logger.getLogger(OdontologoDao.class);
 
@@ -60,8 +62,52 @@ public class OdontologoDao<T> implements Dao<Odontologo> {
         return null;
     }
 
+    //******************************Todos***********************************//
     @Override
     public List<Odontologo> consultarTodos() {
-        return null;
+
+        jdbc.cargarElControlador();
+        PreparedStatement preparedStatement = null;
+
+        List<Odontologo> odontologos = new ArrayList();
+
+        try (Connection con = jdbc.conectarConBaseDeDatos()) {
+
+            preparedStatement  = con.prepareStatement("SELECT * FROM odontologos ");
+
+
+            ResultSet resultado =  preparedStatement.executeQuery();
+
+            while(resultado.next()){
+                String nombreOdontologo = resultado.getString("nombre");
+                String apellidoOdontologo = resultado.getString("apellido");
+                String MatriculaOdontologo = resultado.getString("NumeroMatricula");
+
+
+
+                Odontologo odontologo = new Odontologo();
+                odontologo.setNombre(nombreOdontologo);
+                odontologo.setApellido(apellidoOdontologo);
+                odontologo.setNumeroMatricula(MatriculaOdontologo);
+
+                odontologos.add(odontologo);
+
+            }
+
+
+        } catch (SQLException e) {
+            e.printStackTrace();
+        } finally {
+            logger.info("Conexion y statement BuscarTodos OK");
+        }
+
+        System.out.println(odontologos.get(1).toString());
+
+
+        return odontologos;
+
+
+
     }
+    //****************************************************************************//
 }

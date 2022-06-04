@@ -1,8 +1,11 @@
 package com.odontologica.main.service;
 
 
+import com.odontologica.main.model.Domicilio;
 import com.odontologica.main.model.Odontologo;
+import com.odontologica.main.model.Paciente;
 import com.odontologica.main.persistence.dao.Dao;
+import com.odontologica.main.persistence.dao.impl.OdontologoDao;
 
 import java.util.List;
 
@@ -11,19 +14,24 @@ public class OdontologoService {
 
     private Dao<Odontologo> odontologoIDao;  // instanciarlo
 
-//    public OdontologoService(Dao<Odontologo> odontologoDao) {  // constructor
-//
-//        this.odontologoIDao = odontologoDao;
-//    }
+    public OdontologoService(Dao<Odontologo> odontologoIDao) {
+        this.odontologoIDao = odontologoIDao;
+    }
+
+    public OdontologoService() {
+
+    }
 
     //*******************getter y setter***********************************//
-    public Dao<Odontologo> getOdontologoDao() {
+
+    public Dao<Odontologo> getOdontologoIDao() {
         return odontologoIDao;
     }
 
-    public void setOdontologoDao(Dao<Odontologo> odontologoDao) {
-        this.odontologoIDao = odontologoDao;
+    public void setOdontologoIDao(Dao<Odontologo> odontologoIDao) {
+        this.odontologoIDao = odontologoIDao;
     }
+
     //*************************medotos*********************************************//
 
     public Odontologo guardarOdontologo(Odontologo e) {
@@ -43,7 +51,16 @@ public class OdontologoService {
 
     public List<Odontologo> buscarTodos() {
 
-        return odontologoIDao.consultarTodos();
+        List<Odontologo> odontologo = odontologoIDao.consultarTodos();
+
+//        for(Odontologo p : odontologo){
+//            Domicilio d = domicilioDao.consultarPorId(p.getDomicilio().getId());
+//            p.setDomicilio(d);
+//        }
+
+
+        return odontologo;
+        // return odontologoIDao.consultarTodos();
     }
 
 

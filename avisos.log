@@ -39,3 +39,8 @@
 [2022-06-04 01:32:06] [ INFO ] [OdontologoDao:44] Conexion Crear y preparedStatement OK
 [2022-06-04 01:32:38] [ INFO ] [OdontologoDao:44] Conexion Crear y preparedStatement OK
 [2022-06-04 01:34:01] [ INFO ] [OdontologoDao:42] Conexion Crear y preparedStatement OK
+[2022-06-04 10:26:42] [ INFO ] [OdontologoDao:101] Conexion y statement BuscarTodos OK
+[2022-06-04 11:16:28] [ INFO ] [OdontologoDao:101] Conexion y statement BuscarTodos OK
+[2022-06-04 11:18:20] [ INFO ] [OdontologoDao:101] Conexion y statement BuscarTodos OK
+[2022-06-04 11:28:04] [ INFO ] [OdontologoDao:101] Conexion y statement BuscarTodos OK
+[2022-06-04 11:28:30] [ INFO ] [OdontologoDao:101] Conexion y statement BuscarTodos OK
