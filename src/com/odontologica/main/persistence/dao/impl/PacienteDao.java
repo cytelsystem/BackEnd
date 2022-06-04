@@ -18,43 +18,16 @@ public class PacienteDao implements Dao<Paciente> {
     private ConfiguracionJDBC jdbc = new ConfiguracionJDBC();
 
 
+    @Override
+    public Paciente crear(Paciente entidad) {
+        return null;
+    }
 
     @Override
-    public List<Paciente> consultarTodos() {
-
-
-        List<Paciente> resultado = new ArrayList<>();
-
-        //[1a] Cargar el controlador
-        jdbc.cargarElControlador();
-
-        //[1b]
-        //[2] Crear el statement
-        try(Connection conn = jdbc.conectarConBaseDeDatos(); Statement stmt = conn.createStatement()){
-
-            //[3] Ejecutamos el statement
-            ResultSet rs = stmt.executeQuery("SELECT * FROM pacientes");
-
-            //[4] Procesar el ResultSet
-            while(rs.next()){
-                Paciente p = new Paciente();
-                p.setId(rs.getInt("id"));
-                p.setNombre(rs.getString("nombre"));
-                p.setApellido(rs.getString("apellido"));
-
-                Domicilio d = new Domicilio(rs.getInt("id_domicilio"), null);
-                p.setDomicilio(d);
-
-                resultado.add(p);
-            }
-
-        } catch (SQLException ex) {
-            logger.error("Ha ocurrido en error al consultar los pacientes." + ex.getMessage());
-        }
-
-        //[5] Retornar el resultado de la búsqueda
-        return resultado;
+    public Paciente eliminar(int id) {
+        return null;
     }
+
 
     @Override
     public Paciente consultarPorId(int id) {
@@ -109,7 +82,40 @@ public class PacienteDao implements Dao<Paciente> {
     }
 
     @Override
-    public Paciente crear(Paciente entidad) {
-        return null;
+    public List<Paciente> consultarTodos() {
+
+
+        List<Paciente> resultado = new ArrayList<>();
+
+        //[1a] Cargar el controlador
+        jdbc.cargarElControlador();
+
+        //[1b]
+        //[2] Crear el statement
+        try(Connection conn = jdbc.conectarConBaseDeDatos(); Statement stmt = conn.createStatement()){
+
+            //[3] Ejecutamos el statement
+            ResultSet rs = stmt.executeQuery("SELECT * FROM pacientes");
+
+            //[4] Procesar el ResultSet
+            while(rs.next()){
+                Paciente p = new Paciente();
+                p.setId(rs.getInt("id"));
+                p.setNombre(rs.getString("nombre"));
+                p.setApellido(rs.getString("apellido"));
+
+                Domicilio d = new Domicilio(rs.getInt("id_domicilio"), null);
+                p.setDomicilio(d);
+
+                resultado.add(p);
+            }
+
+        } catch (SQLException ex) {
+            logger.error("Ha ocurrido en error al consultar los pacientes." + ex.getMessage());
+        }
+
+        //[5] Retornar el resultado de la búsqueda
+        return resultado;
     }
+
 }

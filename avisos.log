@@ -1,1 +1,20 @@
 [2022-06-02 17:53:41] [ INFO ] [EstudianteDaoH2:113] Conexion buscar porID OK
+[2022-06-04 00:25:13] [ INFO ] [OdontologoDao:40] Conexion Crear y preparedStatement OK
+[2022-06-04 00:28:02] [ INFO ] [OdontologoDao:40] Conexion Crear y preparedStatement OK
+[2022-06-04 00:28:15] [ INFO ] [OdontologoDao:40] Conexion Crear y preparedStatement OK
+[2022-06-04 00:30:05] [ INFO ] [OdontologoDao:40] Conexion Crear y preparedStatement OK
+[2022-06-04 00:31:06] [ INFO ] [OdontologoDao:40] Conexion Crear y preparedStatement OK
+[2022-06-04 00:31:31] [ INFO ] [OdontologoDao:40] Conexion Crear y preparedStatement OK
+[2022-06-04 00:33:14] [ INFO ] [OdontologoDao:40] Conexion Crear y preparedStatement OK
+[2022-06-04 00:35:25] [ INFO ] [OdontologoDao:40] Conexion Crear y preparedStatement OK
+[2022-06-04 00:38:53] [ INFO ] [OdontologoDao:40] Conexion Crear y preparedStatement OK
+[2022-06-04 00:45:58] [ INFO ] [OdontologoDao:40] Conexion Crear y preparedStatement OK
+[2022-06-04 00:52:18] [ INFO ] [OdontologoDao:38] problemas con el stamwent
+[2022-06-04 00:52:18] [ INFO ] [OdontologoDao:41] Conexion Crear y preparedStatement OK
+[2022-06-04 00:55:35] [ INFO ] [OdontologoDao:38] problemas con el stamwent
+[2022-06-04 00:55:35] [ INFO ] [OdontologoDao:41] Conexion Crear y preparedStatement OK
+[2022-06-04 01:01:06] [ INFO ] [OdontologoDao:38] problemas con el stamwent
+[2022-06-04 01:01:06] [ INFO ] [OdontologoDao:41] Conexion Crear y preparedStatement OK
+[2022-06-04 01:03:36] [ INFO ] [OdontologoDao:38] problemas con el stamwent
+[2022-06-04 01:03:36] [ INFO ] [OdontologoDao:41] Conexion Crear y preparedStatement OK
+[2022-06-04 01:11:19] [ INFO ] [OdontologoDao:42] Conexion Crear y preparedStatement OK

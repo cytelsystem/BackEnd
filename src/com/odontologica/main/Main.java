@@ -1,7 +1,10 @@
 package com.odontologica.main;
 
 import com.odontologica.main.model.Domicilio;
+import com.odontologica.main.model.Odontologo;
 import com.odontologica.main.model.Paciente;
+import com.odontologica.main.persistence.dao.impl.OdontologoDao;
+import com.odontologica.main.service.OdontologoService;
 import com.odontologica.main.service.PacienteService;
 import com.odontologica.main.persistence.dao.Dao;
 import com.odontologica.main.persistence.dao.impl.DomicilioDao;
@@ -31,6 +34,20 @@ public class Main {
 //        estudianteService.guardarEstudiante(estudiante);
 //        estudianteService.guardarEstudiante(estudiante2);
 
+//***********************************Crear un nuevo registro Odontologo************************************************//
+        Odontologo odontologo = new Odontologo();
+        odontologo.setId(1);
+        odontologo.setNombre("Hector");
+        odontologo.setApellido("moreno");
+        odontologo.setNumeroMatricula("m5086");
+
+        OdontologoService odontologoService = new OdontologoService();
+        odontologoService.setOdontologoDao(new OdontologoDao());
+
+
+        odontologoService.guardarOdontologo(odontologo);
+
+
 
 
 //***********************************Eliminar************************************************//
@@ -39,10 +56,15 @@ public class Main {
 //        estudianteService.eliminarEstudiante(1L);
 
 
-//***********************************Buscar por ID************************************************//
-        PacienteService pacienteService = new PacienteService();
-        pacienteService.setPacienteDao(new PacienteDao());
-        pacienteService.buscarPaciente(1);
+//***********************************Buscar por ID Paciente************************************************//
+//        PacienteService pacienteService = new PacienteService();
+//        pacienteService.setPacienteDao(new PacienteDao());
+//        pacienteService.buscarPaciente(1);
+//
+//***********************************Buscar por ID Odontologo************************************************//
+//        PacienteService pacienteService = new PacienteService();
+//        pacienteService.setPacienteDao(new PacienteDao());
+//        pacienteService.buscarPaciente(1);
 
 
 //***********************************Buscar Todos************************************************//

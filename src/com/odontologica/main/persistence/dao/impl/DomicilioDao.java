@@ -19,7 +19,12 @@ public class DomicilioDao implements Dao<Domicilio> {
     private Logger logger = Logger.getLogger(Domicilio.class);
 
     @Override
-    public List<Domicilio> consultarTodos() {
+    public Domicilio crear(Domicilio entidad) {
+        return null;
+    }
+
+    @Override
+    public Domicilio eliminar(int id) {
         return null;
     }
 
@@ -54,7 +59,9 @@ public class DomicilioDao implements Dao<Domicilio> {
     }
 
     @Override
-    public Domicilio crear(Domicilio entidad) {
+    public List<Domicilio> consultarTodos() {
         return null;
     }
+
+
 }

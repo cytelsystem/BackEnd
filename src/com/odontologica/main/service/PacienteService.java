@@ -1,10 +1,12 @@
 package com.odontologica.main.service;
 
-import com.odontologica.main.model.Domicilio;
 import com.odontologica.main.model.Paciente;
+import com.odontologica.main.model.Domicilio;
+import com.odontologica.main.model.Odontologo;
 import com.odontologica.main.persistence.dao.Dao;
-import com.odontologica.main.persistence.dao.impl.DomicilioDao;
 import com.odontologica.main.persistence.dao.impl.PacienteDao;
+import com.odontologica.main.persistence.dao.impl.DomicilioDao;
+import com.odontologica.main.persistence.dao.impl.OdontologoDao;
 
 import java.util.Collection;
 import java.util.List;
@@ -13,14 +15,12 @@ public class PacienteService {
 
     Dao<Paciente> pacienteDao;
     Dao<Domicilio> domicilioDao;
+    Dao<Odontologo> odontologoDao;
 
     public PacienteService() {
         pacienteDao = new PacienteDao();
         domicilioDao = new DomicilioDao();
     }
-
-
-
 
 
     public Collection<Paciente> consultarTodosLosPacientes() {
@@ -35,11 +35,10 @@ public class PacienteService {
 
     }
 
-
     //*******************************************************************************************//
 
-
     public void setPacienteDao(Dao<Paciente> pacienteDao) {
+
         this.pacienteDao = pacienteDao;
     }
 
