@@ -1,8 +1,7 @@
-package com.main;
+package com.odontologica.main;
 
-import com.main.Model.Odontologo;
-import com.main.persistence.dao.impl.OdontologoDAOH2;
-import com.main.Service.OdontologoService;
+import com.odontologica.main.persistence.dao.impl.OdontologoDAOH2;
+import com.odontologica.main.Service.OdontologoService;
 
 
 public class Main {

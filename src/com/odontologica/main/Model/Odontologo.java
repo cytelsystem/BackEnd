@@ -1,4 +1,4 @@
-package com.main.Model;
+package com.odontologica.main.Model;
 
 public class Odontologo {
 

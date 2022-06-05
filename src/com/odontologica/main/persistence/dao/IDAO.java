@@ -1,4 +1,4 @@
-package com.main.persistence.dao;
+package com.odontologica.main.persistence.dao;
 
 import java.util.List;
 

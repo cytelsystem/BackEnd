@@ -1,8 +1,8 @@
-package com.main.persistence.dao.impl;
+package com.odontologica.main.persistence.dao.impl;
 
-import com.main.persistence.dao.IDAO;
-import com.main.persistence.dao.util.ConfiguracionJDBC;
-import com.main.Model.Odontologo;
+import com.odontologica.main.persistence.dao.IDAO;
+import com.odontologica.main.persistence.dao.util.ConfiguracionJDBC;
+import com.odontologica.main.Model.Odontologo;
 import org.apache.log4j.Logger;
 import java.sql.Connection;
 import java.sql.PreparedStatement;

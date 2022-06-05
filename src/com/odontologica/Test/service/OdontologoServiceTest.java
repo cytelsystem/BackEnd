@@ -1,8 +1,8 @@
-package com.Test.service;
+package com.odontologica.Test.service;
 
-import com.main.persistence.dao.impl.OdontologoDAOH2;
-import com.main.Model.Odontologo;
-import com.main.Service.OdontologoService;
+import com.odontologica.main.persistence.dao.impl.OdontologoDAOH2;
+import com.odontologica.main.Model.Odontologo;
+import com.odontologica.main.Service.OdontologoService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

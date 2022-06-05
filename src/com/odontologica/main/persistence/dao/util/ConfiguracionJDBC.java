@@ -1,4 +1,4 @@
-package com.main.persistence.dao.util;
+package com.odontologica.main.persistence.dao.util;
 
     import org.apache.log4j.Logger;
 
