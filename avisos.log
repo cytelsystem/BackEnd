@@ -45,3 +45,6 @@
 [2022-06-04 18:50:39] [ INFO ] [OdontologoDAOH2:41] Conexion Crear y preparedStatement OK
 [2022-06-04 18:51:10] [ INFO ] [OdontologoDAOH2:41] Conexion Crear y preparedStatement OK
 [2022-06-04 18:51:46] [ INFO ] [OdontologoDAOH2:41] Conexion Crear y preparedStatement OK
+[2022-06-04 19:25:06] [ INFO ] [OdontologoDAOH2:66] Driver Funcionando
+[2022-06-04 19:29:17] [ INFO ] [OdontologoDAOH2:66] Eliminacion registro No15fue exitosa
+[2022-06-04 19:30:47] [ INFO ] [OdontologoDAOH2:66] Eliminacion registro No 13 fue exitosa

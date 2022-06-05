@@ -28,6 +28,12 @@ public class OdontologoService {
         return odontologoIDAO.guardar(o);
     }
 
+
+
+    public void eliminar(Long id) {
+        odontologoIDAO.eliminar(id);
+    }
+
     public  Odontologo buscarOdontologoService(int id) {
 
         return odontologoIDAO.buscarPorId(id);

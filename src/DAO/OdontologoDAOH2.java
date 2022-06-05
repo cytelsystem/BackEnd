@@ -45,6 +45,30 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
     }
 
     @Override
+    public void eliminar(Long id) {
+
+        jdbc.cargarElControlador();
+        PreparedStatement preparedStatement = null;
+
+
+        try (Connection connetion = jdbc.conectarConBaseDeDatos()) {
+
+            preparedStatement = connetion.prepareStatement("DELETE FROM odontologos where id= ? ");
+            preparedStatement.setLong(1, id);
+
+            preparedStatement.executeUpdate();
+
+
+        } catch (SQLException e) {
+            logger.error("No se puede establecer la conexion");
+            e.printStackTrace();
+        }finally {
+            logger.info("Eliminacion registro No" + " " + id + " " + "fue exitosa");
+        }
+
+    }
+
+    @Override
     public Odontologo buscarPorId(int id) {
         jdbc.cargarElControlador();
 
