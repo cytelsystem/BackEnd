@@ -26,6 +26,6 @@ create table if not exists odontologos (
 
 
 -- Pueden agregar acá sentencias Insert para precargar datos.
-INSERT INTO domicilios(calle, numero, localidad, provincia) VALUES('Test1', 1, 'Localidad Test1', 'Provincia Test1');
-INSERT INTO pacientes(apellido, nombre, dni, fecha_ingreso, id_domicilio) VALUES('Apellido1', 'Nombre1', '101', '2022-05-31', 1);
-INSERT INTO odontologos(nombre, apellido, numeroMatricula ) VALUES('Carlos', 'Perez', 'MO030622');
+--INSERT INTO domicilios(calle, numero, localidad, provincia) VALUES('Test1', 1, 'Localidad Test1', 'Provincia Test1');
+--INSERT INTO pacientes(apellido, nombre, dni, fecha_ingreso, id_domicilio) VALUES('Apellido1', 'Nombre1', '101', '2022-05-31', 1);
+--INSERT INTO odontologos(nombre, apellido, numeroMatricula ) VALUES('Carlos', 'Perez', 'MO030622');

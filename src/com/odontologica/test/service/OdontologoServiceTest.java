@@ -1,4 +1,5 @@
-package com.odontologica.Test.service;
+
+package com.odontologica.test.service;
 
 import com.odontologica.main.persistence.dao.impl.OdontologoDAOH2;
 import com.odontologica.main.Model.Odontologo;

@@ -15,7 +15,7 @@ public class OdontologoDAOH2 implements Dao<Odontologo> {
 
     private Logger logger = Logger.getLogger(OdontologoDAOH2.class);
 
-    ConfiguracionJDBC jdbc = new ConfiguracionJDBC("org.h2.Driver", "jdbc:h2:~/Odontologica", "sa", "" );  // instanc
+    ConfiguracionJDBC jdbc = new ConfiguracionJDBC("org.h2.Driver", "jdbc:h2:~/Odontologica;INIT=RUNSCRIPT FROM 'create.sql'", "sa", "" );  // instanc
 
     @Override
     public Odontologo crear(Odontologo odontologo) {
