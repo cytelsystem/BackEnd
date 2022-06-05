@@ -1,22 +1,22 @@
 package com.odontologica.main.Service;
 
-import com.odontologica.main.persistence.dao.IDAO;
+import com.odontologica.main.persistence.dao.Dao;
 import com.odontologica.main.Model.Odontologo;
 import java.util.List;
 
 public class OdontologoService {
 
-    private IDAO<Odontologo> odontologoIDAO; // comunicacion con la interface
+    private Dao<Odontologo> odontologoIDAO; // comunicacion con la interface
 
     //******************************Getter***************************************//
-    public IDAO<Odontologo> getOdontologoIDAO() {
+    public Dao<Odontologo> getOdontologoIDAO() {
 
         return odontologoIDAO;
     }
     //******************************Setter***********************************************//
 
 
-    public void setOdontologoIDAO(IDAO<Odontologo> odontologoIDAO) {
+    public void setOdontologoIDAO(Dao<Odontologo> odontologoIDAO) {
 
         this.odontologoIDAO = odontologoIDAO;
     }
@@ -25,7 +25,7 @@ public class OdontologoService {
 
     public  Odontologo guardaOdontologoService(Odontologo o) {
 
-        return odontologoIDAO.guardar(o);
+        return odontologoIDAO.crear(o);
     }
 
 
@@ -36,12 +36,12 @@ public class OdontologoService {
 
     public  Odontologo buscarOdontologoService(int id) {
 
-        return odontologoIDAO.buscarPorId(id);
+        return odontologoIDAO.consultarPorId(id);
     }
 
     public List<Odontologo> listarTodosServices() {
 
-        return odontologoIDAO.buscarTodos();
+        return odontologoIDAO.consultarTodos();
 
 
     }

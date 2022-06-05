@@ -1,6 +1,6 @@
 package com.odontologica.main.persistence.dao.impl;
 
-import com.odontologica.main.persistence.dao.IDAO;
+import com.odontologica.main.persistence.dao.Dao;
 import com.odontologica.main.persistence.dao.util.ConfiguracionJDBC;
 import com.odontologica.main.Model.Odontologo;
 import org.apache.log4j.Logger;
@@ -11,14 +11,14 @@ import java.sql.SQLException;
 import java.util.ArrayList;
 import java.util.List;
 
-public class OdontologoDAOH2 implements IDAO<Odontologo> {
+public class OdontologoDAOH2 implements Dao<Odontologo> {
 
     private Logger logger = Logger.getLogger(OdontologoDAOH2.class);
 
     ConfiguracionJDBC jdbc = new ConfiguracionJDBC("org.h2.Driver", "jdbc:h2:~/Odontologica", "sa", "" );  // instanc
 
     @Override
-    public Odontologo guardar(Odontologo odontologo) {
+    public Odontologo crear(Odontologo odontologo) {
         jdbc.cargarElControlador();
 
         PreparedStatement preparedStatement = null;
@@ -68,7 +68,7 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
     }
 
     @Override
-    public Odontologo buscarPorId(int id) {
+    public Odontologo consultarPorId(int id) {
         jdbc.cargarElControlador();
 
         PreparedStatement preparedStatement = null;
@@ -114,7 +114,7 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
     }
 
     @Override
-    public List<Odontologo> buscarTodos() {
+    public List<Odontologo> consultarTodos() {
         jdbc.cargarElControlador();
 
         PreparedStatement preparedStatement = null;

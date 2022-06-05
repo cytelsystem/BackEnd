@@ -1,5 +1,6 @@
 package com.odontologica.main;
 
+import com.odontologica.main.Model.Odontologo;
 import com.odontologica.main.persistence.dao.impl.OdontologoDAOH2;
 import com.odontologica.main.Service.OdontologoService;
 
@@ -20,9 +21,9 @@ public class Main {
 
 //        Odontologo odontologo = new Odontologo(); //Instancio Odontologo
 //
-//        odontologo.setNombre("Graciela");
-//        odontologo.setApellido("Moreno Rodriguez");
-//        odontologo.setNumeroMatricula("41352450");
+//        odontologo.setNombre("Adela");
+//        odontologo.setApellido("Sanchez");
+//        odontologo.setNumeroMatricula("9024215");
 //        odontologoService.guardaOdontologoService(odontologo); // le paso por parametro la informacion creada en el objeto odontologo
 
         //****************Consultar Todos los registro de la base de datos tabla Odontologo*********************************************************//
@@ -38,10 +39,10 @@ public class Main {
 
         //***************************************Consultar por un Solo ID tabla Odontologo***********************************************************//
 
-//        logger.info(odontologoService.buscarOdontologoService(24));
+//        logger.info(odontologoService.buscarOdontologoService(25));
 
         //****************************************Eliminar Registro por ID tabla Odontologo********************************************************//
-//         odontologoService.eliminar(18L);
+//         odontologoService.eliminar(25L);
 
         //*****************************************************************************************************************************************//
 
