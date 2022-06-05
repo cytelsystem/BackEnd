@@ -1,70 +1,52 @@
-package com.odontologica.main.service;
+package com.odontologica.main.Service;
 
-
-import com.odontologica.main.model.Domicilio;
-import com.odontologica.main.model.Odontologo;
-import com.odontologica.main.model.Paciente;
 import com.odontologica.main.persistence.dao.Dao;
-import com.odontologica.main.persistence.dao.impl.OdontologoDao;
-
+import com.odontologica.main.Model.Odontologo;
 import java.util.List;
 
 public class OdontologoService {
 
+    private Dao<Odontologo> odontologoIDAO; // comunicacion con la interface
 
-    private Dao<Odontologo> odontologoIDao;  // instanciarlo
+    //******************************Getter***************************************//
+    public Dao<Odontologo> getOdontologoIDAO() {
 
-    public OdontologoService(Dao<Odontologo> odontologoIDao) {
-        this.odontologoIDao = odontologoIDao;
+        return odontologoIDAO;
+    }
+    //******************************Setter***********************************************//
+
+
+    public void setOdontologoIDAO(Dao<Odontologo> odontologoIDAO) {
+
+        this.odontologoIDAO = odontologoIDAO;
     }
 
-    public OdontologoService() {
+    //*****************************Metodos************************************************//
 
-    }
+    public  Odontologo guardaOdontologoService(Odontologo o) {
 
-    //*******************getter y setter***********************************//
-
-    public Dao<Odontologo> getOdontologoIDao() {
-        return odontologoIDao;
-    }
-
-    public void setOdontologoIDao(Dao<Odontologo> odontologoIDao) {
-        this.odontologoIDao = odontologoIDao;
-    }
-
-    //*************************medotos*********************************************//
-
-    public Odontologo guardarOdontologo(Odontologo e) {
-        return odontologoIDao.crear(e);
-
-    }
-
-    public void eliminarOdontologo(int id) {
-
-        odontologoIDao.eliminar(id);
-    }
-
-    public Odontologo buscarOdontologo(int id) {
-
-        return odontologoIDao.consultarPorId(id);
-    }
-
-    public List<Odontologo> buscarTodos() {
-
-        List<Odontologo> odontologo = odontologoIDao.consultarTodos();
-
-//        for(Odontologo p : odontologo){
-//            Domicilio d = domicilioDao.consultarPorId(p.getDomicilio().getId());
-//            p.setDomicilio(d);
-//        }
-
-
-        return odontologo;
-        // return odontologoIDao.consultarTodos();
+        return odontologoIDAO.crear(o);
     }
 
 
 
+    public void eliminar(Long id) {
+        odontologoIDAO.eliminar(id);
+    }
 
-    //**********************************************************************//
+    public  Odontologo buscarOdontologoService(int id) {
+
+        return odontologoIDAO.consultarPorId(id);
+    }
+
+    public List<Odontologo> listarTodosServices() {
+
+        return odontologoIDAO.consultarTodos();
+
+
+    }
+
+    //********************************************************************************//
+
+
 }

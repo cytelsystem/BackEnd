@@ -1,26 +1,19 @@
-package com.odontologica.main.model;
-
-import com.odontologica.main.persistence.dao.Dao;
+package com.odontologica.main.Model;
 
 public class Odontologo {
 
-
+    private int id;
     private String nombre;
     private String apellido;
     private String numeroMatricula;
 
-
-    public Odontologo() {
-
+    public int getId() {
+        return id;
     }
 
-    public Odontologo(String nombre, String apellido, String numeroMatricula) {
-        this.setNombre(nombre);
-        this.setApellido(apellido);
-        this.setNumeroMatricula(numeroMatricula);
+    public void setId(int id) {
+        this.id = id;
     }
-
-
 
     public String getNombre() {
         return nombre;
@@ -44,5 +37,13 @@ public class Odontologo {
 
     public void setNumeroMatricula(String numeroMatricula) {
         this.numeroMatricula = numeroMatricula;
+    }
+
+    @Override
+    public String toString() {
+        return ("Odonotologo Name:"+this.getNombre()+
+                " Apellido: "+ this.getApellido() +
+                " Matricula: "+ this.getNumeroMatricula() +
+                " Id : " + this.getId());
     }
 }

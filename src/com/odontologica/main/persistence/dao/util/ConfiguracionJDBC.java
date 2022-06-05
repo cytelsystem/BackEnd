@@ -1,6 +1,6 @@
 package com.odontologica.main.persistence.dao.util;
 
-import org.apache.log4j.Logger;
+    import org.apache.log4j.Logger;
 
 import java.sql.Connection;
 import java.sql.DriverManager;
@@ -23,9 +23,6 @@ public class ConfiguracionJDBC {
         this.contrasenaUsuario = contrasenaUsuario;
     }
 
-    public String javier() {
-        return "hola";
-    }
 
     public ConfiguracionJDBC() {
         this.jdbcDriver = "org.h2.Driver";
@@ -38,7 +35,11 @@ public class ConfiguracionJDBC {
         Connection connection = null;
         try {
             connection = DriverManager.getConnection(dbUrl, nombreUsuario, contrasenaUsuario);
+            logger.info("Se ha establecido correctamente la conexion a la base de datos");
+
         } catch (SQLException throwables) {
+
+            logger.error("La conexion a la base de datos presenta problemas");
             throwables.printStackTrace();
         }
 
@@ -48,11 +49,14 @@ public class ConfiguracionJDBC {
     public void cargarElControlador(){
         try {
             Class.forName(this.jdbcDriver);
+            logger.info("Se cargo correctamente el driver jdbc");
         }
         catch(ClassNotFoundException ex) {
             logger.error("Error: unable to load driver class! " + ex.getMessage());
             System.exit(1);
         }
     }
+
+
 
 }

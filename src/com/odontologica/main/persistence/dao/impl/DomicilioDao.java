@@ -24,8 +24,8 @@ public class DomicilioDao implements Dao<Domicilio> {
     }
 
     @Override
-    public Domicilio eliminar(int id) {
-        return null;
+    public void eliminar(Long id) {
+
     }
 
     @Override
@@ -40,10 +40,10 @@ public class DomicilioDao implements Dao<Domicilio> {
         try(Connection conn = jdbc.conectarConBaseDeDatos();
             Statement stmt = conn.createStatement()){
 
-        //[3] Ejecutamos el statement
+            //[3] Ejecutamos el statement
             ResultSet rs = stmt.executeQuery("SELECT * FROM domicilios WHERE id = " + id);
 
-        //[4] Procesar el ResultSet
+            //[4] Procesar el ResultSet
             if(rs.next()){
                 resultado = new Domicilio();
                 resultado.setId(rs.getInt("id"));
@@ -62,6 +62,8 @@ public class DomicilioDao implements Dao<Domicilio> {
     public List<Domicilio> consultarTodos() {
         return null;
     }
+
+
 
 
 }

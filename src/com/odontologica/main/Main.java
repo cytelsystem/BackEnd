@@ -1,83 +1,50 @@
 package com.odontologica.main;
 
-import com.odontologica.main.model.Domicilio;
-import com.odontologica.main.model.Odontologo;
-import com.odontologica.main.model.Paciente;
-import com.odontologica.main.persistence.dao.impl.OdontologoDao;
-import com.odontologica.main.service.OdontologoService;
-import com.odontologica.main.service.PacienteService;
-import com.odontologica.main.persistence.dao.Dao;
-import com.odontologica.main.persistence.dao.impl.DomicilioDao;
-import com.odontologica.main.persistence.dao.impl.PacienteDao;
+import com.odontologica.main.Model.Odontologo;
+import com.odontologica.main.persistence.dao.impl.OdontologoDAOH2;
+import com.odontologica.main.Service.OdontologoService;
+
 
 public class Main {
+
     public static void main(String[] args) {
 
-//***********************************Crear un nuevo registro Odontologo************************************************//
-//        Odontologo odontologo = new Odontologo();
-//        odontologo.setNombre("ivonne");
-//        odontologo.setApellido("perez");
-//        odontologo.setNumeroMatricula("m5087");
+
+
+        org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(Main.class);
+
+        OdontologoService odontologoService = new OdontologoService();  // Instancio OdontologoService
+        odontologoService.setOdontologoIDAO(new OdontologoDAOH2()); // Utilizo un metodo de odontologoService y le paso una conexion OdontologoDAOH2()
+
+        //********************************Crear un nuevo objeto (Registro) Odontologo**************************************************************//
+
+
+//        Odontologo odontologo = new Odontologo(); //Instancio Odontologo
 //
-//        OdontologoService odontologoService = new OdontologoService();
-//        odontologoService.setOdontologoDao(new OdontologoDao());
+//        odontologo.setNombre("Adela");
+//        odontologo.setApellido("Sanchez");
+//        odontologo.setNumeroMatricula("9024215");
+//        odontologoService.guardaOdontologoService(odontologo); // le paso por parametro la informacion creada en el objeto odontologo
+
+        //****************Consultar Todos los registro de la base de datos tabla Odontologo*********************************************************//
+
+        // Debe existir un metodo toString en el Odontologo
+
+//            int ListarTodo = odontologoService.listarTodosServices().size();
 //
-//
-//        odontologoService.guardarOdontologo(odontologo);
+//            for (int i=0; i< ListarTodo; i++) {
+//                Odontologo registros = odontologoService.listarTodosServices().get(i);
+//                logger.info(registros);
+//            }
 
-//***********************************Buscar Todos************************************************//
-//          OdontologoService odontologoService = new OdontologoService();
-//          odontologoService.setOdontologoIDao(new OdontologoDao());
-//          odontologoService.buscarTodos();
+        //***************************************Consultar por un Solo ID tabla Odontologo***********************************************************//
 
-//***********************************************************************************************//
+//        logger.info(odontologoService.buscarOdontologoService(25));
 
+        //****************************************Eliminar Registro por ID tabla Odontologo********************************************************//
+//         odontologoService.eliminar(27L);
 
-//***********************************Crear un nuevo registro************************************************//
-//        Estudiante estudiante = new Estudiante();
-//        estudiante.setId(1L);
-//        estudiante.setNombre("Hector javier");
-//        estudiante.setApellido("moreno");
-//
-//        EstudianteService estudianteService = new EstudianteService();
-//        estudianteService.setEstudianteIDao(new EstudianteDaoH2());
-//
-//
-//        Estudiante estudiante2 = new Estudiante();
-//        estudiante2.setId(2L);
-//        estudiante2.setNombre("Ivonne Astrid");
-//        estudiante2.setApellido("Perez");
-//
-//
-//
-//        estudianteService.guardarEstudiante(estudiante);
-//        estudianteService.guardarEstudiante(estudiante2);
-
-
-
-
-//***********************************Eliminar************************************************//
-//        EstudianteService estudianteService = new EstudianteService();
-//        estudianteService.setEstudianteIDao(new EstudianteDaoH2());
-//        estudianteService.eliminarEstudiante(1L);
-
-
-//***********************************Buscar por ID Paciente************************************************//
-//        PacienteService pacienteService = new PacienteService();
-//        pacienteService.setPacienteDao(new PacienteDao());
-//        pacienteService.buscarPaciente(1);
-//
-//***********************************Buscar por ID Odontologo************************************************//
-//        PacienteService pacienteService = new PacienteService();
-//        pacienteService.setPacienteDao(new PacienteDao());
-//        pacienteService.buscarPaciente(1);
-
-
-//***********************************Buscar Todos************************************************//
-//        EstudianteService estudianteService = new EstudianteService();
-//        estudianteService.setEstudianteIDao(new EstudianteDaoH2());
-//        estudianteService.buscarTodos();
-//***********************************************************************************************//
+        //*****************************************************************************************************************************************//
 
 
     }

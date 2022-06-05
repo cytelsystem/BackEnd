@@ -20,9 +20,6 @@ public class PacienteServiceTest {
 
         //ENTONCES
         Assertions.assertTrue(resultado.size() > 0);
-
-
     }
 
 }
-
