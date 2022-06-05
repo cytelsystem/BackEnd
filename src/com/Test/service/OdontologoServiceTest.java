@@ -1,16 +1,12 @@
-package Test;
+package com.Test.service;
 
-import DAO.OdontologoDAOH2;
-import Model.Odontologo;
-import Service.OdontologoService;
+import com.main.persistence.dao.impl.OdontologoDAOH2;
+import com.main.Model.Odontologo;
+import com.main.Service.OdontologoService;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.apache.log4j.Logger;
 
-import java.util.Collection;
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 class OdontologoServiceTest {
 

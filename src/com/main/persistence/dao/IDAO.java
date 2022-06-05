@@ -1,4 +1,4 @@
-package DAO;
+package com.main.persistence.dao;
 
 import java.util.List;
 

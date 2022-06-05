@@ -1,7 +1,7 @@
-package Service;
+package com.main.Service;
 
-import DAO.IDAO;
-import Model.Odontologo;
+import com.main.persistence.dao.IDAO;
+import com.main.Model.Odontologo;
 import java.util.List;
 
 public class OdontologoService {

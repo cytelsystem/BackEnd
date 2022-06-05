@@ -1,4 +1,4 @@
-package DAO.util;
+package com.main.persistence.dao.util;
 
     import org.apache.log4j.Logger;
 

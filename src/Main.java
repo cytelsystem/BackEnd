@@ -1,8 +1,5 @@
-import DAO.OdontologoDAOH2;
-import Model.Odontologo;
-import Service.OdontologoService;
-import org.apache.log4j.Logger;
-import java.net.SocketTimeoutException;
+import com.main.persistence.dao.impl.OdontologoDAOH2;
+import com.main.Service.OdontologoService;
 
 
 public class Main {
