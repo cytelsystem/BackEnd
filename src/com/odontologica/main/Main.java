@@ -42,7 +42,7 @@ public class Main {
 //        logger.info(odontologoService.buscarOdontologoService(25));
 
         //****************************************Eliminar Registro por ID tabla Odontologo********************************************************//
-//         odontologoService.eliminar(27L);
+//         odontologoService.eliminar(1L);
 
         //*****************************************************************************************************************************************//
 

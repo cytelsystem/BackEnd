@@ -13,25 +13,25 @@ class OdontologoServiceTest {
 
         org.apache.log4j.Logger logger = org.apache.log4j.Logger.getLogger(OdontologoServiceTest.class);
 
-        OdontologoService odontologoService = new OdontologoService();  // Instancio OdontologoService
+        OdontologoService odontologoService = new OdontologoService();
 
     @Test
     void guardaOdontologoEnBaseDatos() {
 
-        odontologoService.setOdontologoIDAO(new OdontologoDAOH2()); // Utilizo un metodo de odontologoService y le paso una conexion OdontologoDAOH2()
+        odontologoService.setOdontologoIDAO(new OdontologoDAOH2());
 
-       Odontologo odontologo = new Odontologo(); //Instancio Odontologo
+       Odontologo odontologo = new Odontologo();
 
         odontologo.setNombre("Hector");
         odontologo.setApellido("moreno");
         odontologo.setNumeroMatricula("79904519");
-        odontologoService.guardaOdontologoService(odontologo); // le paso por parametro la informacion creada en el objeto odontologo
+        odontologoService.guardaOdontologoService(odontologo);
 
     }
 
     @Test
     void eliminarOdontologoPorID() {
-        odontologoService.setOdontologoIDAO(new OdontologoDAOH2()); // Utilizo un metodo de odontologoService y le paso una conexion OdontologoDAOH2()
+        odontologoService.setOdontologoIDAO(new OdontologoDAOH2());
         odontologoService.eliminar(16L);
     }
 
@@ -40,14 +40,14 @@ class OdontologoServiceTest {
 
     @Test
     void buscarOdontoPorID() {
-        odontologoService.setOdontologoIDAO(new OdontologoDAOH2()); // Utilizo un metodo de odontologoService y le paso una conexion OdontologoDAOH2()
+        odontologoService.setOdontologoIDAO(new OdontologoDAOH2());
         odontologoService.buscarOdontologoService(17);
     }
 
     @Test
     public void _01_deberíaConsultarExitosamenteTodosLosOdontologosDeLaBaseDeDatos(){
 
-        odontologoService.setOdontologoIDAO(new OdontologoDAOH2()); // Utilizo un metodo de odontologoService y le paso una conexion OdontologoDAOH2()
+        odontologoService.setOdontologoIDAO(new OdontologoDAOH2());
         List<Odontologo> resultado = odontologoService.listarTodosServices();
 
         Assertions.assertTrue(resultado.size() > 0);
@@ -58,7 +58,7 @@ class OdontologoServiceTest {
 
     @Test
     void ListarTodosOdontologos() {
-        odontologoService.setOdontologoIDAO(new OdontologoDAOH2()); // Utilizo un metodo de odontologoService y le paso una conexion OdontologoDAOH2()
+        odontologoService.setOdontologoIDAO(new OdontologoDAOH2());
 
            int ListarTodo = odontologoService.listarTodosServices().size();
 
