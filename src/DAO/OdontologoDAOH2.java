@@ -26,7 +26,6 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
 
             preparedStatement = connetion.prepareStatement("INSERT into odontologos (Nombre, Apellido, NumeroMatricula) VALUES (?,?,?)");
 
-
             preparedStatement.setString(1, odontologo.getNombre());
             preparedStatement.setString(2, odontologo.getApellido());
             preparedStatement.setString(3, odontologo.getNumeroMatricula());
@@ -34,11 +33,11 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
             preparedStatement.executeUpdate();
             preparedStatement.close();
 
+            logger.info("Informacion Guardada correctamente");
+
         }catch (SQLException e) {
-            logger.info("problemas con el stamwent");
+            logger.error("No se pudo guardar la informacion");
             e.printStackTrace();
-        } finally {
-            logger.info("Conexion Crear y preparedStatement OK");
         }
 
         return odontologo;
@@ -58,12 +57,11 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
 
             preparedStatement.executeUpdate();
 
+            logger.info("Eliminacion registro No" + " " + id + " " + "fue exitosa");
 
         } catch (SQLException e) {
-            logger.error("No se puede establecer la conexion");
+            logger.error("No se pudo eliminar el registro");
             e.printStackTrace();
-        }finally {
-            logger.info("Eliminacion registro No" + " " + id + " " + "fue exitosa");
         }
 
     }
@@ -104,11 +102,11 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
             preparedStatement.executeQuery();
             preparedStatement.close();
 
+            logger.info("Consulta por ID No" + " " + id + " " + "fue exitosa");
+
         }catch (SQLException e) {
-            logger.info("problemas con el stamwent");
+            logger.error("Presenta problemas la consulta por ID");
             e.printStackTrace();
-        } finally {
-            // logger.info("Conexion Crear y preparedStatement OK");
         }
 
         return odontologo;
@@ -126,8 +124,6 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
 
             preparedStatement = connetion.prepareStatement("SELECT * FROM odontologos");
 
-
-
             ResultSet resultado = preparedStatement.executeQuery();
 
             while(resultado.next()) {
@@ -137,10 +133,7 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
                 String apellidoOdontologo = resultado.getString("apellido");
                 String NumeroMatriculaOdontologo = resultado.getString("NumeroMatricula");
 
-
                 Odontologo odontologo = new Odontologo();
-
-
 
                 odontologo.setId(idOdontologo);
                 odontologo.setNombre(nombreOdontologo);
@@ -148,21 +141,16 @@ public class OdontologoDAOH2 implements IDAO<Odontologo> {
                 odontologo.setNumeroMatricula(NumeroMatriculaOdontologo);
 
                 odontologos.add(odontologo);
-
             }
 
-
-
-
-
             preparedStatement.executeQuery();
-            preparedStatement.close();
+
+            logger.info("Consulta de todos los registros fue exitosa");
+
 
         }catch (SQLException e) {
-            logger.info("problemas con el stamwent");
+            logger.error("Consulta de todos los registros presento problemas");
             e.printStackTrace();
-        } finally {
-            //logger.info("Conexion Crear y preparedStatement OK");
         }
 
         return odontologos;
